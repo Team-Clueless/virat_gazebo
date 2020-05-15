@@ -1,8 +1,16 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
   <model name="virat">
-    <static>true</static>
+    <static>false</static>
     <link name="base_link">
+        <collision name="collision">
+          <geometry>
+            <box>
+            <!-- //This has to be decided -->
+              <size>1 2 2</size>
+            </box>
+          </geometry>
+        </collision>
       <visual name="virat_body">
         <geometry>
           <mesh>
@@ -68,6 +76,24 @@
           </mesh>
         </geometry>
       </visual>
-    </link>      
+    </link>    
+
+        <joint type="revolute" name="left_wheel_hinge">
+        <pose>0 -0.34 0 0 0 0</pose>
+        <child>left_wheel</child>
+        <parent>base_link</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+        </axis>
+      </joint>
+
+      <joint type="revolute" name="right_wheel_hinge">
+        <pose>0 0.34 0 0 0 0</pose>
+        <child>right_wheel</child>
+        <parent>base_link</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+        </axis>
+      </joint>  
   </model>
 </sdf>

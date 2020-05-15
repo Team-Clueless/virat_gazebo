@@ -1,9 +1,9 @@
-<sdf version='1.4'>
-  <world name='default'>
+<sdf version="1.6">
+  <world name="default">
     <include>
-      <uri>model://models/igvc_basic_ground</uri>
+      <uri>model://igvc_basic_ground</uri>
     </include>
-    <light name='sun' type='directional'>
+    <light name="sun" type="directional">
       <cast_shadows>1</cast_shadows>
       <pose>0 0 10 0 -0 0</pose>
       <diffuse>0.8 0.8 0.8 1</diffuse>
@@ -16,7 +16,7 @@
       </attenuation>
       <direction>-0.5 0.1 -0.9</direction>
     </light>
-    <physics type='ode'>
+    <physics type="ode">
       <max_step_size>0.001</max_step_size>
       <real_time_factor>5</real_time_factor>
       <real_time_update_rate>1000</real_time_update_rate>
@@ -37,7 +37,7 @@
     
     <model name="barrel_01">
       <include embedded = "true">
-        <uri>model://models/construction_barrel</uri>
+        <uri>model://construction_barrel</uri>
       </include>
     </model>
 
