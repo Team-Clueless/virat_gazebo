@@ -1,16 +1,17 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <model name="jersey_barrier">
+  <model name="virat">
     <static>true</static>
-    <link name="link">
-      <visual name="visual">
+    <link name="base_link">
+      <visual name="virat_body">
         <geometry>
           <mesh>
-            <uri>model://virat/meshes/sick-lms1xx.dae</uri>
+            <uri>model://virat/meshes/bot2.dae</uri>
           </mesh>
         </geometry>
       </visual>
-
     </link>
+    //Add links and visuals for the tyres and all within this model
+    
   </model>
 </sdf>
