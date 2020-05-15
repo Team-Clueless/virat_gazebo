@@ -34,12 +34,12 @@
       <elevation>0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
-    
-    <model:physical name="barrel_01">
+
+    <model name="barrel_01">
       <include embedded = "true">
-        <xi href="model://construction_barrel" />
+        <uri>model://construction_barrel</uri>
       </include>
-    </model:physical>
+    </model>
 
   </world>
 </sdf>
