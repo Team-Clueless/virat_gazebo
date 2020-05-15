@@ -5,12 +5,21 @@
     <link name="base_link">
         <collision name="collision">
           <geometry>
-            <box>
-            <!-- //This has to be decided -->
-              <size>1 2 2</size>
-            </box>
+          <mesh>
+            <uri>model://virat/meshes/bot2.dae</uri>
+          </mesh>
           </geometry>
         </collision>
+        <!-- <visual name="collision_box">
+          <geometry>
+            <box>
+            //This has to be decided
+              <pose>0 0 0 0 0 0</pose>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+              <transparency>0.6</transparency>
+        </visual> -->
       <visual name="virat_body">
         <geometry>
           <mesh>
@@ -19,7 +28,7 @@
         </geometry>
       </visual>
     </link>
-
+<!-- 
     <link name = "front_thing">
         <pose>0.75 0 0.5 0 0 0</pose>
         <collision name="collision">
@@ -37,17 +46,16 @@
           </mesh>
         </geometry>
       </visual>
-    </link>
+    </link> -->
 
     <!-- ==================== Wheels =============== -->
     <link name = "left_wheel">
      <pose>0 0.34 0 0 0 0</pose>
         <collision name="collision">
           <geometry>
-            <cylinder>
-              <radius>.1</radius>
-              <length>.05</length>
-            </cylinder>
+          <mesh>
+            <uri>model://virat/meshes/tyre1.dae</uri>
+          </mesh>
           </geometry>
         </collision>
       <visual name="visual">
@@ -63,10 +71,9 @@
      <pose>0 -0.34 0 0 0 0</pose>
         <collision name="collision">
           <geometry>
-            <cylinder>
-              <radius>.1</radius>
-              <length>.05</length>
-            </cylinder>
+          <mesh>
+            <uri>model://virat/meshes/tyre1.dae</uri>
+          </mesh>
           </geometry>
         </collision>
       <visual name="visual">
