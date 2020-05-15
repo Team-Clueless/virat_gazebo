@@ -1,7 +1,7 @@
 <sdf version='1.4'>
   <world name='default'>
     <include>
-      <uri>model://igvc_basic_ground</uri>
+      <uri>model://models/igvc_basic_ground</uri>
     </include>
     <light name='sun' type='directional'>
       <cast_shadows>1</cast_shadows>
@@ -35,11 +35,11 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     
-    <model:physical name="barrel_01">
+    <model name="barrel_01">
       <include embedded = "true">
-        <xi href="model://construction_barrel" />
+        <uri>model://models/construction_barrel</uri>
       </include>
-    </model:physical>
+    </model>
 
   </world>
 </sdf>

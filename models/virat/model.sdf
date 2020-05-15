@@ -11,7 +11,63 @@
         </geometry>
       </visual>
     </link>
-    //Add links and visuals for the tyres and all within this model
-    
+
+    <link name = "front_thing">
+        <pose>0.75 0 0.5 0 0 0</pose>
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>.1</radius>
+              <length>1</length>
+            </cylinder>
+          </geometry>
+        </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://virat/meshes/sick-lms1xx.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- ==================== Wheels =============== -->
+    <link name = "left_wheel">
+     <pose>0 0.34 0 0 0 0</pose>
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>.1</radius>
+              <length>.05</length>
+            </cylinder>
+          </geometry>
+        </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://virat/meshes/tyre1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name = "right_wheel">
+     <pose>0 -0.34 0 0 0 0</pose>
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>.1</radius>
+              <length>.05</length>
+            </cylinder>
+          </geometry>
+        </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://virat/meshes/tyre1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>      
   </model>
 </sdf>
