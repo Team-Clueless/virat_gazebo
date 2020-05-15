@@ -3,23 +3,13 @@
   <model name="virat">
     <static>false</static>
     <link name="base_link">
-        <collision name="collision">
-          <geometry>
+      <collision name="collision">
+        <geometry>
           <mesh>
             <uri>model://virat/meshes/bot2.dae</uri>
           </mesh>
-          </geometry>
-        </collision>
-        <!-- <visual name="collision_box">
-          <geometry>
-            <box>
-            //This has to be decided
-              <pose>0 0 0 0 0 0</pose>
-              <size>1 1 1</size>
-            </box>
-          </geometry>
-              <transparency>0.6</transparency>
-        </visual> -->
+        </geometry>
+      </collision>
       <visual name="virat_body">
         <geometry>
           <mesh>
@@ -28,7 +18,8 @@
         </geometry>
       </visual>
     </link>
-<!-- 
+
+    <!-- The LIDAR thing not adding it rn.
     <link name = "front_thing">
         <pose>0.75 0 0.5 0 0 0</pose>
         <collision name="collision">
@@ -49,15 +40,15 @@
     </link> -->
 
     <!-- ==================== Wheels =============== -->
-    <link name = "left_wheel">
-     <pose>0 0.34 0 0 0 0</pose>
-        <collision name="collision">
-          <geometry>
+    <link name="left_wheel">
+      <pose>0 0.34 0 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
           <mesh>
             <uri>model://virat/meshes/tyre1.dae</uri>
           </mesh>
-          </geometry>
-        </collision>
+        </geometry>
+      </collision>
       <visual name="visual">
         <geometry>
           <mesh>
@@ -67,15 +58,15 @@
       </visual>
     </link>
 
-    <link name = "right_wheel">
-     <pose>0 -0.34 0 0 0 0</pose>
-        <collision name="collision">
-          <geometry>
+    <link name="right_wheel">
+      <pose>0 -0.34 0 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
           <mesh>
             <uri>model://virat/meshes/tyre1.dae</uri>
           </mesh>
-          </geometry>
-        </collision>
+        </geometry>
+      </collision>
       <visual name="visual">
         <geometry>
           <mesh>
@@ -83,24 +74,25 @@
           </mesh>
         </geometry>
       </visual>
-    </link>    
+    </link>
 
-        <joint type="revolute" name="left_wheel_hinge">
-        <pose>0 -0.34 0 0 0 0</pose>
-        <child>left_wheel</child>
-        <parent>base_link</parent>
-        <axis>
-          <xyz>0 1 0</xyz>
-        </axis>
-      </joint>
+    <!-- Joints for Wheels -->
+    <joint type="revolute" name="left_wheel_hinge">
+      <pose>0 -0.34 0 0 0 0</pose>
+      <child>left_wheel</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
 
-      <joint type="revolute" name="right_wheel_hinge">
-        <pose>0 0.34 0 0 0 0</pose>
-        <child>right_wheel</child>
-        <parent>base_link</parent>
-        <axis>
-          <xyz>0 1 0</xyz>
-        </axis>
-      </joint>  
+    <joint type="revolute" name="right_wheel_hinge">
+      <pose>0 0.34 0 0 0 0</pose>
+      <child>right_wheel</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
   </model>
 </sdf>
