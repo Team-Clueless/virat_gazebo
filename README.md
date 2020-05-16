@@ -22,3 +22,10 @@ virat_gazebo
 
 * src
   > any node files, (a teleop key maybe ?)
+
+Notes
+-----
+* installed joint-state-pulisher-gui package for rviz
+```bash
+sudo apt install ros-kinetic-joint-state-publisher-gui
+```
