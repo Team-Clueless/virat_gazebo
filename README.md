@@ -28,6 +28,11 @@ virat_gazebo
 * src
   > any node files, (a teleop key maybe ?)
 
+Pending tasks
+-------------
+- [ ] Update model.sdf of virat according to the virat_urdf file
+- [ ] Add lidar prototype in both urdf and sdf
+
 Notes
 -----
 
