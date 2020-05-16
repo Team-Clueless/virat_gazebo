@@ -2,7 +2,7 @@
 
 gazebo simulation package for clueless virat :)
 
-Sturcturing of this package is done keeping the turtlebot3_gazebo package as a reference (atleast for now)
+Structuring of this package is done keeping the turtlebot3_gazebo package as a reference (atleast for now)
 Please make changes keeping in mind the following structure
 
 virat_gazebo
