@@ -1,4 +1,5 @@
 <launch>
+
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find virat_gazebo)/worlds/igvc_ramp.world"/>
     <arg name="paused" value="false"/>
@@ -7,7 +8,12 @@
     <arg name="headless" value="false"/>
     <arg name="debug" value="false"/>
   </include>
-  
-  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find virat_gazebo)/models/virat/virat_model.urdf -urdf -z 1 -model virat_model" />
+
+  <include file="$(find virat_gazebo)/launch/spawn_virat.launch">
+    <arg name="x" default="-3"/>
+    <arg name="y" default="18"/>
+    <arg name="z" default="1"/>
+    <arg name="yaw" default="3"/>
+  </include>
 
 </launch>

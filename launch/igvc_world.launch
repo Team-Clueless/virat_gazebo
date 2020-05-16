@@ -1,4 +1,5 @@
 <launch>
+
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find virat_gazebo)/worlds/igvc_2.world"/>
     <arg name="paused" value="false"/>
@@ -6,5 +7,7 @@
     <arg name="gui" value="true"/>
     <arg name="headless" value="false"/>
     <arg name="debug" value="false"/>
+
   </include>
+
 </launch>
