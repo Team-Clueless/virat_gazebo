@@ -50,6 +50,7 @@
         <origin xyz="0 0.323 0" rpy="0 0 0"/>
         <axis xyz="0 1 0"/>
     </joint>
+
     <!-- =====================Right Wheel======================-->
     <link name="right_wheel">
         <visual>
@@ -79,6 +80,7 @@
         <origin xyz="0 -0.323 0" rpy="0 0 0"/>
         <axis xyz="0 1 0"/>
     </joint>
+
     <!-- =====================Castor Wheel======================-->
     <link name="connect_castor_link">
         <visual>
@@ -137,7 +139,29 @@
         <origin xyz="0.48 0 0 " rpy="0 0 0"/>
         <axis xyz="0 0 0"/>
     </joint>
-
+    
+    <gazebo>
+        <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+            <commandTopic>/cmd_vel</commandTopic>
+            <odometryTopic>/odom</odometryTopic>
+            <odometryFrame>odom</odometryFrame>
+            <odometrySource>world</odometrySource>
+            <publishOdomTF>true</publishOdomTF>
+            <robotBaseFrame>base_link</robotBaseFrame>
+            <publishWheelTF>false</publishWheelTF>
+            <publishTf>true</publishTf>
+            <publishWheelJointState>true</publishWheelJointState>
+            <legacyMode>false</legacyMode>
+            <updateRate>30</updateRate>
+            <leftJoint>left_wheel_joint</leftJoint>
+            <rightJoint>right_wheel_joint</rightJoint>
+            <wheelSeparation>0.160</wheelSeparation>
+            <wheelDiameter>0.066</wheelDiameter>
+            <wheelAcceleration>1</wheelAcceleration>
+            <wheelTorque>10</wheelTorque>
+            <rosDebugLevel>na</rosDebugLevel>
+        </plugin>
+    </gazebo>
 
 </robot>
 
