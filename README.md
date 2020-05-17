@@ -4,3 +4,6 @@
 - Added two cameras and the differential drive plugin in the `virat.gazebo` file.
 - Updated the `igvc_ramp.world` according to Ashwin's code to fix the barrel collision bug.
 - Some more minor tweaks
+
+### Pending
+- `model.sdf` is missing from the virat folder. Convert from xacro.
