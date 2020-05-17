@@ -30,6 +30,7 @@ virat_gazebo
 
 Pending tasks
 -------------
+
 - [ ] Update model.sdf of virat according to the virat_urdf file
 - [ ] Add lidar prototype in both urdf and sdf
 - [ ] Tweak the inertia values
