@@ -2,7 +2,7 @@
 
   <arg name="model" default="$(find virat_gazebo)/models/virat/virat_model.urdf"/>
   <arg name="gui" default="true" />
-  <arg name="rvizconfig" default="$(find virat_gazebo)/rviz/urdf.rviz" />
+  <arg name="rvizconfig" default="$(find virat_gazebo)/rviz/virat_config.rviz" />
 
   <param name="robot_description" command="xacro --inorder '$(find virat_gazebo)/models/virat/virat_model.xacro'" />
 
