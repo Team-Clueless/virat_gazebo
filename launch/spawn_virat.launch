@@ -1,0 +1,19 @@
+<!-- spawn_virat.launch -->
+<launch>
+  <!-- Robot pose -->
+  <arg name="x" default="0"/>
+  <arg name="y" default="0"/>
+  <arg name="z" default="0"/>
+  <arg name="roll" default="0"/>
+  <arg name="pitch" default="0"/>
+  <arg name="yaw" default="0"/>
+  <arg name="model" default="$(find virat_gazebo)/models/virat/virat_model.urdf"/>
+  
+  <param name="robot_description" command="cat $(find virat_gazebo)/models/virat/virat_model.urdf"/>
+
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+        args="-urdf -param robot_description -model clueless_virat
+              -x $(arg x) -y $(arg y) -z $(arg z)
+              -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
+
+</launch>

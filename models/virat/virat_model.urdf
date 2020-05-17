@@ -1,10 +1,20 @@
 <?xml version="1.0" ?>
+<<<<<<< HEAD
 <robot name="virat">
     <link name="base_link">
         <inertial>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <mass value="5"/>
             <inertia ixx="0.005" ixy="0.005" ixz="0.005" iyy="0.005" iyz="0.005" izz="0.005"/>
+=======
+<robot name="clueless_virat">
+    <static>false</static>
+    <link name="base_link">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0.5"/>
+            <inertia ixx="0.05" ixy="0.05" ixz="0.05" iyy="0.05" iyz="0.05" izz="0.05"/>
+>>>>>>> 3f20f738ae0f54869a4eaa44299b4808d3346e59
         </inertial>
 
         <visual>
@@ -31,7 +41,11 @@
 
         <inertial>
             <origin xyz="0 0 0" rpy="0 0 0"/>
+<<<<<<< HEAD
             <mass value="0.5"/>
+=======
+            <mass value="0.05"/>
+>>>>>>> 3f20f738ae0f54869a4eaa44299b4808d3346e59
             <inertia ixx="0.005" ixy="0.005" ixz="0.005" iyy="0.005" iyz="0.005" izz="0.005"/>
         </inertial>
 
@@ -112,7 +126,11 @@
         <visual>
             <origin xyz="0 0 0 " rpy="0 0 0"/>
                 <geometry>
+<<<<<<< HEAD
                     <mesh filename="package://virat_gazebo/models/virat/meshes/castors1.dae"/>
+=======
+                    <mesh filename="package://virat_gazebo/models/virat/meshes/castors1.dae" scale="1.45 1.45 1.45"/>
+>>>>>>> 3f20f738ae0f54869a4eaa44299b4808d3346e59
                 </geometry>
         </visual>
 
@@ -125,7 +143,11 @@
         <collision>
             <origin xyz="0 0 0 " rpy="0 0 0"/>
                 <geometry>
+<<<<<<< HEAD
                     <mesh filename="package://virat_gazebo/models/virat/meshes/castors1.dae"/>
+=======
+                    <mesh filename="package://virat_gazebo/models/virat/meshes/castors1.dae" scale="1.45 1.45 1.45"/>
+>>>>>>> 3f20f738ae0f54869a4eaa44299b4808d3346e59
                 </geometry>
         </collision>
     </link>

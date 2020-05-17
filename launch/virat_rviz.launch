@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3f20f738ae0f54869a4eaa44299b4808d3346e59
 <launch>
 
   <arg name="model" default="$(find virat_gazebo)/models/virat/virat_model.urdf"/>
@@ -12,4 +15,8 @@
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
 
+<<<<<<< HEAD
 </launch>
+=======
+</launch>
+>>>>>>> 3f20f738ae0f54869a4eaa44299b4808d3346e59
