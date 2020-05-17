@@ -1,0 +1,109 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="virat">
+    <static>false</static>
+    <link name="base_link">
+      <inertial>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+        <mass>10.0</mass>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://virat/meshes/bot2.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="virat_body">
+        <geometry>
+          <mesh>
+            <uri>model://virat/meshes/bot2.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- The LIDAR thing not adding it rn.
+    <link name = "front_thing">
+        <pose>0.75 0 0.5 0 0 0</pose>
+        <collision name="collision">
+          <geometry>
+            <cylinder>
+              <radius>.1</radius>
+              <length>1</length>
+            </cylinder>
+          </geometry>
+        </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://virat/meshes/sick-lms1xx.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link> -->
+
+    <!-- ==================== Wheels =============== -->
+    <link name="left_wheel">
+      <pose>0 0.34 0 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://virat/meshes/tyre1.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://virat/meshes/tyre1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name="right_wheel">
+      <pose>0 -0.34 0 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://virat/meshes/tyre1.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://virat/meshes/tyre1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <!-- Joints for Wheels -->
+    <joint type="revolute" name="left_wheel_hinge">
+      <pose>0 -0.34 0 0 0 0</pose>
+      <child>left_wheel</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+
+    <joint type="revolute" name="right_wheel_hinge">
+      <pose>0 0.34 0 0 0 0</pose>
+      <child>right_wheel</child>
+      <parent>base_link</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+      </axis>
+    </joint>
+  </model>
+</sdf>

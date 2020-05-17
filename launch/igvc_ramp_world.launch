@@ -7,4 +7,5 @@
     <arg name="headless" value="false"/>
     <arg name="debug" value="false"/>
   </include>
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find virat_gazebo)/models/virat/virat_model.urdf -urdf -z 1 -model virat_model" />
 </launch>
