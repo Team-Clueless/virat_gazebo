@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # virat_gazebo
 
 gazebo simulation package for clueless virat :)
@@ -43,3 +44,14 @@ Notes
 ```bash
 sudo apt install ros-kinetic-joint-state-publisher-gui
 ```
+=======
+### Notes (Commit - File system update)
+- Updated the `urdf` to `xacro`. The code is cleaner now, I guess.
+- Updated the launch files accordingly
+- Added two cameras and the differential drive plugin in the `virat.gazebo` file.
+- Updated the `igvc_ramp.world` according to Ashwin's code to fix the barrel collision bug.
+- Some more minor tweaks
+
+### Pending
+- `model.sdf` is missing from the virat folder. Convert from xacro.
+>>>>>>> 92df7c5a3a0190f917eccf8c6d7cae76888ac12d

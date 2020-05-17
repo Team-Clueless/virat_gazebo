@@ -1,5 +1,10 @@
-<?xml version="1.0" ?>
-<robot name="clueless_virat">
+<?xml version='1.0'?>
+<robot name="clueless_virat" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:property name="cameraSize" value="0.05"/>
+  <xacro:property name="cameraMass" value="0.1"/>
+
+  <xacro:include filename="$(find virat_gazebo)/models/virat/virat.gazebo" />
     <static>false</static>
     <link name="base_link">
         <inertial>
@@ -21,8 +26,9 @@
                 </geometry>
         </collision>
     </link>
-    <!-- =====================Left Wheel======================-->
-    <link name="left_wheel">
+    <!-- =====================Wheels======================-->
+    <xacro:macro name="wheel" params="prefix reflect">
+    <link name="${prefix}_wheel">
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
                 <geometry>
@@ -43,13 +49,13 @@
                 </geometry>
         </collision>
     </link>
-
-    <joint name="left_wheel_joint" type="continuous">
+    <joint name="${prefix}_wheel_joint" type="continuous">
         <parent link="base_link"/>
-        <child link="left_wheel"/>
-        <origin xyz="0 0.323 0" rpy="0 0 0"/>
+        <child link="${prefix}_wheel"/>
+        <origin xyz="0 ${reflect*0.323} 0" rpy="0 0 0"/>
         <axis xyz="0 1 0"/>
     </joint>
+<<<<<<< HEAD:models/virat/virat_model.urdf
 
     <!-- =====================Right Wheel======================-->
     <link name="right_wheel">
@@ -81,6 +87,13 @@
         <axis xyz="0 1 0"/>
     </joint>
 
+=======
+    </xacro:macro>
+
+    <xacro:wheel prefix="right" reflect="1" />
+    <xacro:wheel prefix="left" reflect="-1" />
+    
+>>>>>>> 92df7c5a3a0190f917eccf8c6d7cae76888ac12d:models/virat/virat_model.xacro
     <!-- =====================Castor Wheel======================-->
     <link name="connect_castor_link">
         <visual>
@@ -121,8 +134,13 @@
 
         <inertial>
             <origin xyz="0 0 0" rpy="0 0 0"/>
+<<<<<<< HEAD:models/virat/virat_model.urdf
             <mass value="0.5"/>
             <inertia ixx="0.001" ixy=".05" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+=======
+            <mass value="2"/>
+            <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+>>>>>>> 92df7c5a3a0190f917eccf8c6d7cae76888ac12d:models/virat/virat_model.xacro
         </inertial>
 
         <collision>
@@ -139,6 +157,7 @@
         <origin xyz="0.48 0 0 " rpy="0 0 0"/>
         <axis xyz="0 0 0"/>
     </joint>
+<<<<<<< HEAD:models/virat/virat_model.urdf
     
     <gazebo>
         <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
@@ -165,3 +184,46 @@
 
 </robot>
 
+=======
+
+ <!-- =========================Cameras======================================= -->
+
+
+ <xacro:macro name="camera" params="prefix reflect">
+ <link name="${prefix}_camera">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="${cameraSize} ${cameraSize} ${cameraSize}"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="${cameraSize} ${cameraSize} ${cameraSize}"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+
+    <inertial>
+      <mass value="${cameraMass}" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <box_inertia m="${cameraMass}" x="${cameraSize}" y="${cameraSize}" z="${cameraSize}" />
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+  <joint name="${prefix}_camera_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="0.72 ${reflect*0.05} 1.175" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="${prefix}_camera"/>
+  </joint>
+</xacro:macro>
+
+<xacro:camera prefix="right" reflect="1"/>
+<xacro:camera prefix="left" reflect="-1"/>
+
+</robot>
+>>>>>>> 92df7c5a3a0190f917eccf8c6d7cae76888ac12d:models/virat/virat_model.xacro

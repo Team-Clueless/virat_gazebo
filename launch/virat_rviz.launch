@@ -4,7 +4,7 @@
   <arg name="gui" default="true" />
   <arg name="rvizconfig" default="$(find virat_gazebo)/rviz/urdf.rviz" />
 
-  <param name="robot_description" command="cat $(arg model)" />
+  <param name="robot_description" command="xacro --inorder '$(find virat_gazebo)/models/virat/virat_model.xacro'" />
 
   <node if="$(arg gui)" name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
   <node unless="$(arg gui)" name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
