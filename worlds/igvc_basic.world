@@ -34,11 +34,6 @@
       <elevation>0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
-<<<<<<< HEAD:worlds/igvc.world
-    
-=======
-
->>>>>>> 3f20f738ae0f54869a4eaa44299b4808d3346e59:worlds/igvc_basic.world
     <model name="barrel_01">
       <include embedded = "true">
         <uri>model://construction_barrel</uri>

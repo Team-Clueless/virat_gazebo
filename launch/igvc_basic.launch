@@ -1,8 +1,4 @@
 <launch>
-<<<<<<< HEAD
-=======
-
->>>>>>> 3f20f738ae0f54869a4eaa44299b4808d3346e59
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find virat_gazebo)/worlds/igvc_basic.world"/>
     <arg name="paused" value="false"/>
@@ -11,8 +7,6 @@
     <arg name="headless" value="false"/>
     <arg name="debug" value="false"/>
   </include>
-<<<<<<< HEAD
-=======
 
   <include file="$(find virat_gazebo)/launch/spawn_virat.launch">
     <arg name="x" default="-3"/>
@@ -21,5 +15,4 @@
     <arg name="yaw" default="3"/>
   </include>
 
->>>>>>> 3f20f738ae0f54869a4eaa44299b4808d3346e59
 </launch>
