@@ -1,28 +1,28 @@
 <?xml version="1.0"?>
 <robot>
-
-  <gazebo>
-      <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
-          <commandTopic>/virat/cmd_vel</commandTopic>
-          <odometryTopic>/virat/odom</odometryTopic>
-          <odometryFrame>odom</odometryFrame>
-          <odometrySource>world</odometrySource>
-          <publishOdomTF>true</publishOdomTF>
-          <robotBaseFrame>base_link</robotBaseFrame>
-          <publishWheelTF>false</publishWheelTF>
-          <publishTf>true</publishTf>
-          <publishWheelJointState>true</publishWheelJointState>
-          <legacyMode>false</legacyMode>
-          <updateRate>30</updateRate>
-          <leftJoint>left_wheel_joint</leftJoint>
-          <rightJoint>right_wheel_joint</rightJoint>
-          <wheelSeparation>0.65</wheelSeparation>
-          <wheelDiameter>0.4</wheelDiameter>
-          <wheelAcceleration>5</wheelAcceleration>
-          <wheelTorque>10</wheelTorque>
-          <rosDebugLevel>na</rosDebugLevel>
-      </plugin>
-  </gazebo>
+  
+    <gazebo>
+        <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+            <commandTopic>/virat/cmd_vel</commandTopic>
+            <odometryTopic>/virat/odom</odometryTopic>
+            <odometryFrame>odom</odometryFrame>
+            <odometrySource>world</odometrySource>
+            <publishOdomTF>true</publishOdomTF>
+            <robotBaseFrame>base_link</robotBaseFrame>
+            <publishWheelTF>false</publishWheelTF>
+            <publishTf>true</publishTf>
+            <publishWheelJointState>true</publishWheelJointState>
+            <legacyMode>false</legacyMode>
+            <updateRate>30</updateRate>
+            <leftJoint>left_wheel_joint</leftJoint>
+            <rightJoint>right_wheel_joint</rightJoint>
+            <wheelSeparation>0.65</wheelSeparation>
+            <wheelDiameter>0.4</wheelDiameter>
+            <wheelAcceleration>3</wheelAcceleration>
+            <wheelTorque>10</wheelTorque>
+            <rosDebugLevel>na</rosDebugLevel>
+        </plugin>
+    </gazebo>
 
   <gazebo reference="right_camera">
     <material>Gazebo/Green</material>
@@ -105,9 +105,9 @@
           </horizontal>
         </scan>
         <range>
-          <min>0.10</min>
-          <max>30.0</max>
-          <resolution>0.01</resolution>
+          <min>0.12</min>
+          <max>15</max>
+          <resolution>0.015</resolution>
         </range>
         <noise>
           <type>gaussian</type>
@@ -116,10 +116,9 @@
         </noise>
       </ray>
       <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
-        <topicName>/virat/laser/scan</topicName>
+        <topicName>/virat/laser_scan</topicName>
         <frameName>hokuyo</frameName>
       </plugin>
     </sensor>
   </gazebo>
-  
-</robot>
+  </robot>
