@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sdf version='1.6'>
   <world name='default'>
-    <model name='igvc_basic_ground'>
+    <model name='igvc_ramp_ground'>
       <static>1</static>
       <link name='link'>
         <collision name='collision'>
