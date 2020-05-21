@@ -211,9 +211,9 @@ Visualization Manager:
       Queue Size: 10
       Selectable: true
       Size (Pixels): 3
-      Size (m): 0.00999999978
+      Size (m): 0.04999999978
       Style: Flat Squares
-      Topic: /virat/laser/scan
+      Topic: /virat/laser_scan
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
