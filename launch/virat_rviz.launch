@@ -1,14 +1,18 @@
 <launch>
 
+  
   <arg name="model" default="$(find virat_gazebo)/models/virat/virat_model.urdf"/>
   <arg name="gui" default="true" />
   <arg name="rvizconfig" default="$(find virat_gazebo)/rviz/virat_config.rviz" />
 
   <param name="robot_description" command="xacro --inorder '$(find virat_gazebo)/models/virat/virat_model.xacro'" />
-
+	<!-- remove if shit-->
+   <!--arg name="map_file" default="$(find virat_gazebo)/maps/map.yaml"/-->
+   <!--node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/-->
+         <!--remove if shit-->
   <node if="$(arg gui)" name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
   <node unless="$(arg gui)" name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find virat_gazebo)/rviz/virat_config.rviz"/>
 
 </launch>
