@@ -1,14 +1,10 @@
 # virat_gazebo
 
-gazebo simulation package for clueless virat :)
+Gazebo simulation package for clueless virat :)
 
-Structuring of this package is done keeping the turtlebot3_gazebo package as a reference (atleast for now)
-Please make changes keeping in mind the following structure
 
-virat_gazebo
+### virat_gazebo
 
-* include
-  > contains any header files or python modules (if any)
   
 * launch
   > launch files for worlds and bot
@@ -28,12 +24,6 @@ virat_gazebo
 * src
   > any node files, (a teleop key maybe ?)
 
-Pending tasks
--------------
-
-- [ ] Update model.sdf of virat according to the virat_urdf file
-- [ ] Add lidar prototype in both urdf and sdf
-- [ ] Tweak the inertia values
 
 Notes
 -----
@@ -42,4 +32,33 @@ Notes
 
 ```bash
 sudo apt install ros-kinetic-joint-state-publisher-gui
+```
+
+Usage
+-----
+
+### Launch virat in different worlds !
+
+* Just the lanes, no barrels
+
+```bash
+roslaunch virat_gazebo igvc_basic.launch
+```
+
+* Lanes with barrels
+
+```bash
+roslaunch virat_gazebo igvc_world.launch
+```
+
+* Ramp world
+
+```bash
+roslaunch virat_gazebo igvc_ramp_world.launch
+```
+
+* Bounded world (custom made for debugging purposes)
+
+```bash
+roslaunch virat_gazebo virat_bounded_world.launch
 ```
