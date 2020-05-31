@@ -224,7 +224,7 @@ Visualization Manager:
       Marker Topic: /target_path
       Name: Target Path
       Namespaces:
-        {}
+        "": true
       Queue Size: 100
       Value: true
   Enabled: true
@@ -267,10 +267,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.475396991
+      Pitch: 1.56979632
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.02358413
+      Yaw: 3.17358994
     Saved: ~
 Window Geometry:
   Displays:
@@ -292,5 +292,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1216
-  X: 271
-  Y: 103
+  X: 130
+  Y: 70
