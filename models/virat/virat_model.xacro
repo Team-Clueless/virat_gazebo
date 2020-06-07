@@ -56,8 +56,8 @@
     </joint>
     </xacro:macro>
 
-    <xacro:wheel prefix="right" reflect="1" />
-    <xacro:wheel prefix="left" reflect="-1" />
+    <xacro:wheel prefix="right" reflect="-1" />
+    <xacro:wheel prefix="left" reflect="1" />
     
     <!-- =====================Castor Wheel======================-->
     <link name="connect_castor_link">
@@ -154,8 +154,8 @@
   </joint>
 </xacro:macro>
 
-<xacro:camera prefix="right" reflect="1"/>
-<xacro:camera prefix="left" reflect="-1"/>
+<xacro:camera prefix="right" reflect="-1"/>
+<xacro:camera prefix="left" reflect="1"/>
 
 <!-- =========================Laser======================================= -->
 

@@ -2,7 +2,9 @@
 <package format="2">
   <name>virat_gazebo</name>
   <version>0.0.0</version>
-  <description>The virat_gazebo package</description>
+  <description>
+    Primary simulation package for Virat
+  </description>
 
   <maintainer email="abhihota025@gmail.com">Abhijit Hota</maintainer>
   <maintainer email="ankitkumarpal27@gmail.com">Ankit Kumar Pal</maintainer>

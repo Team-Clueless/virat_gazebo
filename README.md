@@ -1,12 +1,66 @@
-### Notes (Commit - File system update)
-- Updated the `urdf` to `xacro`. The code is cleaner now, I guess.
-- Updated the launch files accordingly
-- Added two cameras and the differential drive plugin in the `virat.gazebo` file.
-- Updated the `igvc_ramp.world` according to Ashwin's code to fix the barrel collision bug.
-- Some more minor tweaks
+![alt text](https://img.shields.io/badge/status-stable-brightgreen)
 
-### Pending
-- `model.sdf` is missing from the virat folder. Convert from xacro.
+# virat_gazebo
 
-### Notes (Commit - 21/05)
-- Updated my branch with master. Not much progress from my side.
+Gazebo simulation package for clueless virat :)
+
+
+### virat_gazebo
+
+  
+* launch
+  > launch files for worlds and bot
+  
+* models
+  * model 1
+    > files
+  * model 2
+    > files
+
+* rviz
+  > rviz config files
+  
+* worlds
+  > world files
+
+* src
+  > any node files, (a teleop key maybe ?)
+
+
+Notes
+-----
+
+* installed joint-state-pulisher-gui package for rviz
+
+```bash
+sudo apt install ros-kinetic-joint-state-publisher-gui
+```
+
+Usage
+-----
+
+### Launch virat in different worlds !
+
+* Just the lanes, no barrels
+
+```bash
+roslaunch virat_gazebo igvc_basic.launch
+```
+
+* Lanes with barrels
+
+```bash
+roslaunch virat_gazebo igvc_world.launch
+```
+
+* Ramp world
+
+```bash
+roslaunch virat_gazebo igvc_ramp_world.launch
+```
+
+* Bounded world (custom made for debugging purposes)
+
+```bash
+roslaunch virat_gazebo virat_bounded_world.launch
+```
